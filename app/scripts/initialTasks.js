@@ -2,7 +2,7 @@
 (function (mifosX) {
     var defineHeaders = function ($httpProvider, $translateProvider, ResourceFactoryProvider, HttpServiceProvider, $idleProvider, $keepaliveProvider, IDLE_DURATION, WARN_DURATION, KEEPALIVE_INTERVAL) {
         var mainLink = getLocation(window.location.href);
-        var baseApiUrl = "https://localhost:8443/fineract-provider/api/v1?tenantIdentifier=default";
+        var baseApiUrl = "https://104.199.238.10/fineract-provider/api/v1?tenantIdentifier=default";
         var host = "";
         var portNumber = "";
         //accessing from openmf server
