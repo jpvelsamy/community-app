@@ -11,6 +11,7 @@
             scope.specificIncomeAccountMapping = [];
             scope.penaltySpecificIncomeaccounts = [];
             scope.configureFundOption = {};
+            scope.scheduleMatrix=[];
             scope.date = {};
             scope.pvFlag = false;
             scope.rvFlag = false;
@@ -30,6 +31,15 @@
             scope.transactionProcessingStrategy = true;
             scope.allowAttributeConfiguration = true;
             scope.interestRecalculationOnDayTypeOptions = [];
+            
+            scope.addLoanSchedule = function () {
+            	for(i = 0 ; i < scope.formData.maxNumberOfRepayments; i++) {
+            			var loanSchedule = {};
+            			loanSchedule.installNum=i+1
+            			scope.scheduleMatrix.push(loanSchedule);
+            	}
+            };
+            
             for (var i = 1; i <= 28; i++) {
                 scope.interestRecalculationOnDayTypeOptions.push(i);
             }
@@ -303,7 +313,8 @@
                 this.formData.dateFormat = scope.df;
                 this.formData.startDate = reqFirstDate;
                 this.formData.closeDate = reqSecondDate;
-
+                this.formData.scheduleMatrix =  scope.scheduleMatrix;
+                
                 //Interest recalculation data
                 if (this.formData.isInterestRecalculationEnabled) {
                     var restFrequencyDate = dateFilter(scope.date.recalculationRestFrequencyDate, scope.df);

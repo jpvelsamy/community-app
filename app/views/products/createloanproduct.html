@@ -693,6 +693,47 @@
     </div>
 </div>
 
+<div class="col-sm-2">
+<h3>Structured payment section	</h3>
+</div>
+<div class="col-sm-1">
+            <input id="generate-schedule" data-ng-click="addLoanSchedule()"   type="button"  class="btn btn-primary" name="generate-schedule" value="Create schedule" />
+</div>
+
+<table class="table width80">
+	<tr class="graybg" class="width50">
+		<th>Installment number</th>
+		<th>Installment Amount</th>
+		<th>Constituent Principal</th>
+		<th>Constituent interest</th>
+	</tr>
+	<tr ng-repeat="loanSchedule in scheduleMatrix">
+		<td>
+			<ng-form name="installNum{{$index}}">
+                  <input type="text" id="installNum1" name="installNum1" class="form-control" type="text" 
+                         ng-model="loanSchedule.installNum"   number-format required/>                      
+              </ng-form>
+		</td>
+		<td>
+              <ng-form name="installAmt{{$index}}">
+                       <input id="installAmt1" name="installAmt1" class="form-control" type="text"
+                                   ng-model="loanSchedule.installAmt" number-format required/>                         
+               </ng-form>
+        </td>
+        <td>
+               <ng-form name="installPrincipal{{$index}}">
+                       <input id="installPrincipal1" name="installPrincipal1" class="form-control" type="text"
+                                   ng-model="loanSchedule.installPrincipal" number-format required/>                         
+               </ng-form>
+         </td>
+         <td>
+               <ng-form name="installInterest{{$index}}">
+                       <input id="installInterest1" name="installInterest1" class="form-control" type="text"
+                                   ng-model="loanSchedule.installInterest" number-format required/>                         
+               </ng-form>
+         </td>
+	</tr>
+</table>
 
 <h3>{{ 'label.heading.interestRecalculation' | translate }}</h3>
 <hr>
