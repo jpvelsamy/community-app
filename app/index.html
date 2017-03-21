@@ -11,9 +11,9 @@
 <body  class="preview whitebg" id="top" data-spy="scroll" data-target=".subnav" data-offset="80" data-ng-controller="MainController">
 <!--Loader -->
 
-<div id="loaderWrapper" data-ng-hide="domReady" style="position: absolute; height: 100%; width: 100%; top: 0;">
-    <div id="loader" style="margin: 175px auto">
-        <img src="./images/MifosX_logo.png" alt="MifosX" style="min-width: 50px;   width: 6%; margin: 0 auto" class="img-responsive">
+<div id="loaderWrapper" data-ng-hide="domReady" style="position:relative; height: 100%;">
+    <div id="loader" style="  margin:auto;   height: 300px;  width: 300px;  position:fixed;  top:0;  bottom:0;  left:0; right:0;   display:flex;  flex-direction:column;  justify-content:center; ">
+        <img src="./images/MifosX_logo.png" alt="MifosX" style="min-width: 50px;   width: 6%; margin: 10px auto" class="img-responsive">
         <img src="./images/loader.gif" style="margin: 10px auto" class="img-responsive">
     </div>
 </div>
@@ -66,55 +66,14 @@
         </div>
         <div class="row col-md-8 col-lg-offset-2 paddedbottom">
         	<div class="col-md-3">
-                <img src="./images/MifosX_logo.png" alt="Mifos X" width="150" class="img-responsive" ng-if="!isBigLogoPath"/>
-                <img src="{{bigLogoPath}}" alt="Mifos X" width="150" class="img-responsive" ng-if="isBigLogoPath">
+                <img src="./images/MifosX_logo.png" alt="Chimera CBS" width="150" class="img-responsive" ng-if="!isBigLogoPath"/>
+                <img src="{{bigLogoPath}}" alt="Chimera CBS" width="150" class="img-responsive" ng-if="isBigLogoPath">
             </div>
             <div class="col-md-9">
                 <h1>{{ 'label.heading.mifosx' | translate }}</h1>
-    <span>{{ 'label.heading.version' | translate }} {{ version }}</span>
-                <br /> <span>{{ 'label.heading.uptodate' | translate }}</span>
-                <br /> <span ng-bind-html="text"></span>
+                <h1>Release version 4.1</h1>                
             </div>
-        </div>
-        <div class="row">
-        <div class="col-md-4">
-                <div style="border: 1px solid #DDDDDD;padding:15px;">
-                    <div style="background-color: #F5F5F5;border-bottom: 1px solid #DDDDDD;padding: 10px 15px;margin: -15px -15px 15px;">
-                        <strong>{{ 'label.heading.resources' | translate }}</strong>
-                    </div>
-                    <ul>
-                        <li><a target="https://mifosforge.jira.com/wiki/display/MIFOS/User+Manual" href="https://mifosforge.jira.com/wiki/display/MIFOS/User+Manual">{{ 'label.anchor.usermanual' | translate }}</a></li>
-                        <li><a target="https://mifosforge.jira.com/wiki/pages/viewpage.action?pageId=14712842" href="https://mifosforge.jira.com/wiki/pages/viewpage.action?pageId=14712842">{{ 'label.anchor.functionalspec' | translate }}</a></li>
-                        <li><a href="https://mifosforge.jira.com/wiki/display/MDZ/Welcome+in+the+Zone">{{ 'label.anchor.developerzone' | translate }}</a></li>
-                    </ul>
-                </div>
-        </div>
-        <div class="col-md-4">
-                <div style="border: 1px solid #DDDDDD;padding:15px;">
-                    <div style="background-color: #F5F5F5;border-bottom: 1px solid #DDDDDD;padding: 10px 15px;margin: -15px -15px 15px;">
-                        <strong>{{ 'label.heading.community' | translate }}</strong>
-                    </div>
-                    <ul>
-                        <li><a target="https://groups.google.com/forum/#!forum/mifosusers" href="https://groups.google.com/forum/#!forum/mifosusers">{{ 'label.anchor.usersgroup' | translate }}</a></li>
-                        <li><a target="https://groups.google.com/forum/#!forum/mifosdeveloper" href="https://groups.google.com/forum/#!forum/mifosdeveloper">{{ 'label.anchor.developergroup' | translate }}</a></li>
-                        <li><a target="http://mifos.org/resources/community/communications/#mifos-irc" href="http://mifos.org/community/communications/mifos-irc">{{ 'label.anchor.irc' | translate }}</a></li>
-                    </ul>
-                </div>
-        </div>
-        <div class="col-md-4">
-                <div style="border: 1px solid #DDDDDD;padding:15px;">
-                    <div style="background-color: #F5F5F5;border-bottom: 1px solid #DDDDDD;padding: 10px 15px;margin: -15px -15px 15px;">
-                        <strong>{{ 'label.heading.contribute' | translate }}</strong>
-                    </div>
-                    <ul>
-                        <li><a target="https://mifosforge.jira.com/wiki/display/MDZ/Key+Design+Principles" href="https://mifosforge.jira.com/wiki/display/MDZ/Key+Design+Principles/">{{ 'label.anchor.keydesignprinciples' | translate }}</a></li>
-                        <li><a target="https://mifosforge.jira.com/wiki/display/MDZ/Working+with+Code" href="http://sourceforge.net/projects/mifos/">{{ 'label.anchor.workingwithcode' | translate }}</a></li>
-                        <li><a target="http://mifos.org/donate/" href="http://mifos.org/donate/">{{ 'label.anchor.donate' | translate }}</a></li>
-                    </ul>
-                </div>
-
-        </div>
-      </div>
+        </div>      
     </div>
 
     <!-- Navbar -->
@@ -139,7 +98,7 @@
                 </div>
             </div>
         </div>
-        <div class="left-nav">
+        <div class="left-nav" style="display:flex">
         	<ul class="nav nav-pills nav-stacked margin-nav">
                 <li><a class="black" href="#/help"><i class="icon-keyboard icon-large"></i>&nbsp;&nbsp;{{ 'label.anchor.keyboardshortcut' | translate}}</a></li>
                 <li class="divider"></li>
@@ -164,17 +123,14 @@
                 <li><a class="black" href="#/creategroup"><i class="icon-group icon-large"></i> + {{ 'label.anchor.group' | translate}}</a></li>
                 <li class="divider"></li>
                 <li><a class="black" href="#/createcenter"><i class="icon-map-marker icon-large"></i> + {{ 'label.anchor.center' | translate}}</a></li>
-                <li class="divider"></li>
-                <li><a class="black" ng-click= "helpf()" ><i class="icon-question-sign icon-large"></i>&nbsp;&nbsp;&nbsp;{{ 'label.anchor.help' | translate }}</a></li>
-
             </ul>
         </div>
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         	<div class="container-fluid container">
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <a class="brand" href="#/home">
-                        <img src="./images/MifosX_logoSmall.png" alt="Mifos X" height="20" ng-if="!isHeaderLogoPath">
-                        <img src="{{headerLogoPath}}" alt="Mifos X" height="20" ng-if="isHeaderLogoPath">
+                        <img src="./images/MifosX_logoSmall.png" alt="Chimera CBS" height="20" ng-if="!isHeaderLogoPath">
+                        <img src="{{headerLogoPath}}" alt="Chimera CBS" height="20" ng-if="isHeaderLogoPath">
                     </a>
                     <ul class="nav navbar-nav" id="main-menu-left">
                         <li class="dropdown">
@@ -212,8 +168,7 @@
                     <ul class="nav navbar-nav navbar-right" id="main-menu-right">
                         <li class="dropdown" id="user-menu">
                             <a id="user-dropdown" class="dropdown-toggle" data-toggle="dropdown" href="#"> {{currentSession.user.name}}<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a id="help" ng-click="helpf()"><i class="icon-question-sign"></i> {{ 'label.anchor.help' | translate }}</a></li>
+                            <ul class="dropdown-menu">                                
                                 <li><a href="#/profile"><i class="icon-user"></i> {{ 'label.anchor.profile' | translate }}</a></li>
                                 <li><a href="#/usersetting"><i class="icon-cog"></i> {{ 'label.anchor.settings' | translate }}</a></li>
                                 <li><a id="logout" data-ng-click="logout()"><i class="icon-off"></i> {{ 'label.anchor.logout' | translate }}</a></li>
@@ -245,9 +200,11 @@
                         <div class="whitebg" ng-view></div>
                     </div>
                     <!-- Footer -->
-					<footer>
-						<p align="center"> <a href="https://mifosforge.jira.com/browse/MIFOSX/component/11710/?selectedTab=com.atlassian.jira.jira-projects-plugin:component-changelog-panel" target="_blank"> {{'label.relVersion' | translate}} {{version}} | {{'label.relDate' | translate}} {{releasedate}} </a> </p>
-					</footer>
+                    <footer>
+                        <p align="center">                            
+                                {{'label.relVersion' | translate}} 4.1 
+                         </p>
+                    </footer>
                     <hr>
                 </div> <!-- /row-fluid -->
             </div><!-- /blockui-->
