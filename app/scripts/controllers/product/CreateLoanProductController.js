@@ -40,7 +40,20 @@
             	}
             };
             
-            for (var i = 1; i <= 28; i++) {
+		
+scope.clearFields=function () {
+	
+	       angular.forEach(scope.scheduleMatrix, function(item) {
+                item.installAmt=null;
+                item.installPrincipal=null;
+                item.installInterest=null;
+            });
+
+};
+
+
+	            
+		for (var i = 1; i <= 28; i++) {
                 scope.interestRecalculationOnDayTypeOptions.push(i);
             }
             resourceFactory.loanProductResource.get({resourceType: 'template'}, function (data) {
