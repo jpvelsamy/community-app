@@ -696,12 +696,15 @@
 <div class="col-sm-2">
 <h3>Structured payment section	</h3>
 </div>
-<div class="col-sm-1">
-            <input id="generate-schedule" data-ng-click="addLoanSchedule()"   type="button"  class="btn btn-primary" name="generate-schedule" value="Create schedule" />
+
+<div class="container">
+  <input id="generate-schedule" data-ng-click="addLoanSchedule()" class="btn btn-primary" name="generate-schedule" value="Create schedule" type="button">
+  <input type="button" name="button" value="Reset"class="btn btn-primary" id="delete" data-ng-click="clearFields()">
 </div>
 
-<table class="table width80">
-	<tr class="graybg" class="width50">
+<table  class="table width80">
+
+	<tr id="toreset" class="graybg" class="width50">
 		<th>Installment number</th>
 		<th>Installment Amount</th>
 		<th>Constituent Principal</th>
