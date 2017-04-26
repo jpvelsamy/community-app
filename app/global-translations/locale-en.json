@@ -721,6 +721,7 @@
     "error.msg.client.member.of.group.and.cannot.update.office": "The client is a member of a group so you must update the office of the group.",
     "error.msg.clients.activationDate.cannot.be.before.office.activation.date": "Client activation date cannot be a date before the office opening date.",
     "error.msg.client.duplicate.externalId": "A client with external id `{{params[0].value}}` already exists.",
+    "error.msg.client.duplicate.mobileNo": "A client with mobile no `{{params[0].value}}` already exists.",
     "error.msg.client.duplicate.accountNo": "A client with account no. `{{params[0].value}}` already exists.",
     "error.msg.client.id.invalid": "Client does not exist.",
     "error.msg.client.not.active.exception": "The Client with id `{{params[0].value}}` is not active.",
